@@ -11,10 +11,9 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
   return (
     <button
       onClick={() => useCartStore.getState().addToCart(product)}
-      className="mt-5 bg-gray-500 text-white py-3 rounded-xl hover:bg-gray-800 transition font-medium text-lg"
+      className="bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition"
     >
       Add to Cart
     </button>
   );
 }
-

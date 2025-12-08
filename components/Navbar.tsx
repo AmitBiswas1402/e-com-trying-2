@@ -2,11 +2,16 @@
 
 import Image from "next/image";
 import { ShoppingCart, MapPin, Search } from "lucide-react";
+import { useCartStore } from "@/store/cartStore";
+import Link from "next/link";
 
 const Navbar = () => {
+  const cart = useCartStore((state) => state.cart); // dynamic subscription
+
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <nav className="w-full bg-black text-white px-6 py-3 flex items-center justify-between shadow-md">
-      
       {/* Left: Logo + Location */}
       <div className="flex items-center gap-6">
         {/* Logo */}
@@ -36,26 +41,24 @@ const Navbar = () => {
 
       {/* Right: Cart + Avatar */}
       <div className="flex items-center gap-6">
-        
         {/* Cart */}
         <div className="relative cursor-pointer">
-          <ShoppingCart size={22} />
-          <span className="absolute -top-1 -right-2 bg-red-600 text-xs px-1.5 rounded-full">
-            2
-          </span>
+          <Link href="/cart" className="relative">
+            <ShoppingCart size={26} />
+
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-600 text-xs px-2 py-0.5 rounded-full">
+                {totalItems}
+              </span>
+            )}
+          </Link>
         </div>
 
         {/* Avatar */}
         <div className="w-9 h-9 rounded-full overflow-hidden border border-gray-700 cursor-pointer">
-          <Image
-            src="/avatar.png"
-            alt="User"
-            width={36}
-            height={36}
-          />
+          <Image src="/avatar.png" alt="User" width={36} height={36} />
         </div>
       </div>
-
     </nav>
   );
 };
