@@ -1,4 +1,5 @@
 "use client"
+import { useCartStore } from '@/store/cartStore'
 import { products } from '@/utils/products'
 import Image from 'next/image'
 
@@ -61,7 +62,7 @@ const ProductsPage = () => {
             className="mt-4 bg-black text-white py-2.5 rounded-lg hover:bg-gray-800 font-medium transition text-sm"
             type="button"
             tabIndex={-1}
-            onClick={e => e.preventDefault()}
+            onClick={() => useCartStore.getState().addToCart(product)}
           >
             Add to Cart
           </button>
