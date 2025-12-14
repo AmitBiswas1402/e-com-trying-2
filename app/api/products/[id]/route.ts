@@ -7,7 +7,7 @@ interface ParamsProps {
 
 export async function DELETE(req: Request, { params }: ParamsProps) {
   try {
-    const { id } = await params; // ✅ FIXED
+    const { id } = await params; 
 
     await connectDB();
 
