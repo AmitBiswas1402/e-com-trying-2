@@ -1,5 +1,4 @@
-import Navbar from '@/components/Navbar'
-import OfferCards from './offers/page'
+import OfferCards from './(main)/offers/page'
 
 const HomePage = () => {
   return (
