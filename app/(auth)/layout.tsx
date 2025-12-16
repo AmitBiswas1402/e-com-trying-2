@@ -4,8 +4,8 @@ export default function AuthRootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressContentEditableWarning>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

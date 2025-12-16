@@ -1,4 +1,4 @@
-import OfferCards from './(main)/offers/page'
+import OfferCards from './offers/page'
 
 const HomePage = () => {
   return (
