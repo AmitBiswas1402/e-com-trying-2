@@ -81,9 +81,14 @@ export default function SignupPage() {
         {/* Role */}
         <select
           name="role"
-          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm bg-white outline-none focus:border-black focus:ring-2 focus:ring-black/20 transition"
+          value={form.role}
           onChange={handleChange}
+          className="w-full appearance-none rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 outline-none transition
+               focus:border-black focus:ring-2 focus:ring-black/20 hover:border-gray-400"
         >
+          <option value="" disabled>
+            Select role
+          </option>
           <option value="user">User</option>
           <option value="admin">Admin</option>
         </select>
