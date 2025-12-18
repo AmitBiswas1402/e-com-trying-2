@@ -31,7 +31,6 @@ export default function SignupPage() {
     const data = await res.json();
 
     if (res.ok) {
-      alert("Signup successful");
       router.push("/login");
     } else {
       alert(data.error);
@@ -39,23 +38,32 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-black via-gray-900 to-black px-4">
+    <div className="relative min-h-screen flex items-center justify-center bg-zinc-950 overflow-hidden px-4">
+      {/* Abstract blocks */}
+      <div className="absolute -top-24 -left-24 h-80 w-80 bg-indigo-600 rounded-3xl rotate-12" />
+      <div className="absolute top-1/3 -right-32 h-96 w-96 bg-emerald-500 rounded-3xl -rotate-12" />
+      <div className="absolute bottom-0 left-1/4 h-64 w-64 bg-orange-500 rounded-3xl rotate-6" />
+
+      {/* Form Card */}
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md rounded-2xl bg-white/95 backdrop-blur p-8 shadow-2xl space-y-5"
+        className="relative z-10 w-full max-w-md bg-white rounded-2xl p-8 shadow-xl space-y-5"
       >
-        {/* Heading */}
-        <div className="text-center space-y-1">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-            Create Account
+        {/* Header */}
+        <div className="space-y-1">
+          <h1 className="text-3xl font-bold text-zinc-900">
+            Create account
           </h1>
-          <p className="text-sm text-gray-500">Join us and get started</p>
+          <p className="text-sm text-zinc-500">
+            Start building something great
+          </p>
         </div>
 
+        {/* Inputs */}
         <input
           name="name"
           placeholder="Full Name"
-          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 bg-white outline-none focus:border-black focus:ring-2 focus:ring-black/20 transition"
+          className="w-full rounded-md border border-zinc-300 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 transition"
           onChange={handleChange}
           required
         />
@@ -64,7 +72,7 @@ export default function SignupPage() {
           name="email"
           type="email"
           placeholder="Email Address"
-          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 bg-white outline-none focus:border-black focus:ring-2 focus:ring-black/20 transition"
+          className="w-full rounded-md border border-zinc-300 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 transition"
           onChange={handleChange}
           required
         />
@@ -73,7 +81,7 @@ export default function SignupPage() {
           name="password"
           type="password"
           placeholder="Password"
-          className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 bg-white outline-none focus:border-black focus:ring-2 focus:ring-black/20 transition"
+          className="w-full rounded-md border border-zinc-300 px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 transition"
           onChange={handleChange}
           required
         />
@@ -83,12 +91,8 @@ export default function SignupPage() {
           name="role"
           value={form.role}
           onChange={handleChange}
-          className="w-full appearance-none rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 outline-none transition
-               focus:border-black focus:ring-2 focus:ring-black/20 hover:border-gray-400"
+          className="w-full rounded-md border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 transition"
         >
-          <option value="" disabled>
-            Select role
-          </option>
           <option value="user">User</option>
           <option value="admin">Admin</option>
         </select>
@@ -96,17 +100,17 @@ export default function SignupPage() {
         {/* Button */}
         <button
           type="submit"
-          className="w-full rounded-lg bg-black py-2.5 text-sm font-semibold text-white transition hover:bg-gray-800 active:scale-[0.98]"
+          className="w-full rounded-md bg-zinc-900 py-2.5 text-sm font-semibold text-white hover:bg-zinc-800 transition active:scale-[0.98]"
         >
           Create Account
         </button>
 
         {/* Footer */}
-        <p className="text-center text-sm text-gray-600">
+        <p className="text-center text-sm text-zinc-600">
           Already have an account?{" "}
           <span
             onClick={() => router.push("/login")}
-            className="cursor-pointer font-medium text-black hover:underline"
+            className="cursor-pointer font-medium text-zinc-900 hover:underline"
           >
             Login
           </span>
