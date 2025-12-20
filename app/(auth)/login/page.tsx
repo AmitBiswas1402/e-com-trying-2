@@ -59,7 +59,7 @@ export default function SignupPage() {
           <div className="pointer-events-none absolute inset-0 rounded-2xl bg-linear-to-br from-white/10 to-transparent" />
 
           <div className="relative space-y-1">
-            <h1 className="text-3xl font-bold text-white">Create account</h1>
+            <h1 className="text-3xl font-bold text-white">Login to your account</h1>
             <p className="text-sm text-white/70">
               Start building something great
             </p>
@@ -93,7 +93,7 @@ export default function SignupPage() {
              hover:scale-[1.03]
              active:scale-[0.98] cursor-pointer"
           >
-            Login to your Account
+            Login 
           </button>
 
           <p className="text-center text-sm text-white/70">
