@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -31,9 +32,10 @@ export default function SignupPage() {
     const data = await res.json();
 
     if (res.ok) {
+      toast.success("Account created successfully 🎉");
       router.push("/login");
     } else {
-      alert(data.error);
+      toast.error(data.error || "Signup failed");
     }
   };
 
