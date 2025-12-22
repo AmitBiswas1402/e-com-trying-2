@@ -56,7 +56,15 @@ const Navbar = () => {
 
         {/* Avatar */}
         <div className="w-9 h-9 rounded-full overflow-hidden border border-gray-700 cursor-pointer">
-          <Image src="/avatar.png" alt="User" width={36} height={36} />
+          <Link href="/login" className="hover:opacity-80 transition">
+            <Image
+              src="/avatar.png"
+              alt="User"
+              width={36}
+              height={36}
+              className="rounded-full cursor-pointer"
+            />
+          </Link>
         </div>
       </div>
     </nav>

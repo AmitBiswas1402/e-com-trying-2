@@ -1,11 +1,7 @@
-export default function AuthRootLayout({
+export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en" suppressContentEditableWarning>
-      <body suppressHydrationWarning>{children}</body>
-    </html>
-  );
+  return <>{children}</>;
 }
