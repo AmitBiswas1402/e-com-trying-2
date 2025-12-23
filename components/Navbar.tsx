@@ -55,7 +55,9 @@ const Navbar = () => {
         </div>
 
         {/* Avatar */}
-        <div className="w-9 h-9 rounded-full overflow-hidden border border-gray-700 cursor-pointer">
+        <div className="flex mt-2">
+          Welcome,
+          <div className="w-9 h-9 rounded-full overflow-hidden border border-gray-700 cursor-pointer">
           <Link href="/login" className="hover:opacity-80 transition">
             <Image
               src="/avatar.png"
@@ -65,6 +67,7 @@ const Navbar = () => {
               className="rounded-full cursor-pointer"
             />
           </Link>
+        </div>
         </div>
       </div>
     </nav>
