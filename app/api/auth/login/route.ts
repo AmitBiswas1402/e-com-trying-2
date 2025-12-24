@@ -10,23 +10,24 @@ export async function POST(req: Request) {
     const { email, password } = await req.json();
 
     const user = await User.findOne({ email });
-    if (!user) return Response.json({ error: "User not found" }, { status: 400 });
+    if (!user)
+      return Response.json({ error: "User not found" }, { status: 400 });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return Response.json({ error: "Invalid password" }, { status: 400 });
+    if (!isMatch)
+      return Response.json({ error: "Invalid password" }, { status: 400 });
 
     const token = jwt.sign(
       {
         id: user._id,
         email: user.email,
-        role: user.role
+        role: user.role,
       },
       process.env.JWT_SECRET!,
       { expiresIn: "7d" }
     );
 
     return Response.json({ success: true, token });
-
   } catch (error: unknown) {
     if (error instanceof Error) {
       return Response.json(

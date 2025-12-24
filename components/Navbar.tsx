@@ -4,11 +4,49 @@ import Image from "next/image";
 import { ShoppingCart, MapPin, Search } from "lucide-react";
 import { useCartStore } from "@/store/cartStore";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { jwtDecode } from "jwt-decode";
+import UserDropdown from "./UserDropdown";
+
+interface DecodedToken {
+  name: string;
+  email: string;
+  role: string;
+}
+
+const getFirstNameFromToken = (): string | null => {
+  if (typeof window === "undefined") return null;
+
+  const token = localStorage.getItem("token");
+  if (!token) return null;
+
+  try {
+    const decoded = jwtDecode<DecodedToken>(token);
+    return decoded.name?.split(" ")[0] || null;
+  } catch {
+    return null;
+  }
+};
 
 const Navbar = () => {
-  const cart = useCartStore((state) => state.cart); // dynamic subscription
+  const cart = useCartStore((state) => state.cart);
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  const [firstName, setFirstName] = useState<string | null>(() =>
+    getFirstNameFromToken()
+  );
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const updateFirstName = () => {
+      setFirstName(getFirstNameFromToken());
+    };
+
+    window.addEventListener("storage", updateFirstName);
+    return () => window.removeEventListener("storage", updateFirstName);
+  }, []);
 
   return (
     <nav className="w-full bg-black text-white px-6 py-3 flex items-center justify-between shadow-md">
@@ -54,20 +92,22 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Avatar */}
-        <div className="flex mt-2">
-          Welcome,
-          <div className="w-9 h-9 rounded-full overflow-hidden border border-gray-700 cursor-pointer">
-          <Link href="/login" className="hover:opacity-80 transition">
-            <Image
-              src="/avatar.png"
-              alt="User"
-              width={36}
-              height={36}
-              className="rounded-full cursor-pointer"
-            />
-          </Link>
-        </div>
+        {/* User Section */}
+        <div className="flex items-center text-sm">
+          {firstName ? (
+            <span className="text-gray-300">
+              Welcome,{" "}
+              <span className="font-semibold text-white">{firstName}</span>
+              <UserDropdown />
+            </span>
+          ) : (
+            <Link
+              href="/login"
+              className="text-gray-300 hover:text-white transition"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </nav>

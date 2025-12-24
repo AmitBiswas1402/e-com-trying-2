@@ -1,7 +1,7 @@
-"use client"
-import { useCartStore } from '@/store/cartStore'
-import { products } from '@/utils/products'
-import Image from 'next/image'
+"use client";
+import { useCartStore } from "@/store/cartStore";
+import { products } from "@/utils/products";
+import Image from "next/image";
 
 const ProductsPage = () => {
   return (
@@ -10,16 +10,25 @@ const ProductsPage = () => {
         <a
           key={product.id}
           href={`/products/${product.id}`}
-          className="bg-white rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-gray-200 p-5 flex flex-col cursor-pointer"
+          className="
+            rounded-2xl
+            bg-linear-to-br from-white via-gray-50 to-gray-100
+            border border-gray-200
+            p-5 flex flex-col cursor-pointer
+            shadow-[0_4px_14px_rgba(0,0,0,0.08)]
+            transition-all duration-300 ease-out
+            hover:-translate-y-1
+            hover:shadow-[0_14px_32px_rgba(0,0,0,0.16)]
+          "
         >
           {/* IMAGE */}
-          <div className="w-full h-56 bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
+          <div className="w-full h-56 bg-white rounded-xl overflow-hidden flex items-center justify-center">
             <Image
               src={product.image}
               alt={product.name}
               width={300}
               height={240}
-              className="object-cover w-full h-full transition-transform duration-300 hover:scale-105"
+              className="object-cover w-full h-full transition-transform duration-300 ease-out hover:scale-105"
             />
           </div>
 
@@ -36,40 +45,52 @@ const ProductsPage = () => {
               <span className="flex items-center gap-1 bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-md font-medium text-xs">
                 ★ {product.rating}
               </span>
-              <span className="text-gray-500 text-xs">{product.reviews} reviews</span>
+              <span className="text-gray-500 text-xs">
+                {product.reviews} reviews
+              </span>
             </div>
 
             {/* Price */}
             <div className="mt-3 flex items-center gap-2">
-              <span className="text-xl font-bold text-gray-900">&#8377;{product.price}</span>
+              <span className="text-xl font-bold text-gray-900">
+                ₹{product.price}
+              </span>
               {product.oldPrice && (
-                <span className="text-gray-500 line-through text-sm">&#8377;{product.oldPrice}</span>
+                <span className="text-gray-500 line-through text-sm">
+                  ₹{product.oldPrice}
+                </span>
               )}
             </div>
 
             {/* Delivery */}
-            <div className={`mt-2 text-xs font-medium ${
-              product.inStock ? "text-green-600" : "text-red-600"
-            }`}>
-              {product.inStock
-                ? product.deliveryDate
-                : "Out of stock"}
+            <div
+              className={`mt-2 text-xs font-medium ${
+                product.inStock ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              {product.inStock ? product.deliveryDate : "Out of stock"}
             </div>
           </div>
 
           {/* Add to Cart Button */}
           <button
-            className="mt-4 bg-black text-white py-2.5 rounded-lg hover:bg-gray-800 font-medium transition text-sm"
             type="button"
             tabIndex={-1}
             onClick={() => useCartStore.getState().addToCart(product)}
+            className="
+              mt-4 py-2.5 rounded-lg
+              bg-black text-white text-sm font-medium
+              transition-all duration-300 ease-out
+              hover:bg-blue-600 hover:scale-[1.03]
+              active:scale-[0.98]
+            "
           >
             Add to Cart
           </button>
         </a>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default ProductsPage
+export default ProductsPage;

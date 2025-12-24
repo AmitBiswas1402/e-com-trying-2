@@ -1,16 +1,14 @@
 import Navbar from "@/components/Navbar";
 
-export default function AuthRootLayout({
+export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressContentEditableWarning>
-      <body suppressHydrationWarning>
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <div suppressHydrationWarning>
+      <Navbar />
+      {children}
+    </div>
   );
 }
