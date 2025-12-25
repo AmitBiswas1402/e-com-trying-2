@@ -9,7 +9,7 @@ export const products = [
     reviews: 1283,
     category: "Electronics",
     image:
-      "https://images.unsplash.com/photo-1580894741074-1afc82dbd5a5?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     features: [
       "40mm Drivers",
       "20 hrs Battery",
@@ -29,7 +29,7 @@ export const products = [
     reviews: 983,
     category: "Wearables",
     image:
-      "https://images.unsplash.com/photo-1580906855280-3dc1e59c07c7?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zml0bmVzJTIwYmFuZHxlbnwwfHwwfHx8MA%3D%3D",
     features: [
       "SpO2 Tracking",
       "Sleep Monitor",
@@ -64,7 +64,7 @@ export const products = [
     reviews: 2101,
     category: "Footwear",
     image:
-      "https://images.unsplash.com/photo-1600180758890-6f948e90c5c9?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cnVubmluZyUyMHNob2VzfGVufDB8MHwwfHx8MA%3D%3D",
     features: ["Breathable Mesh", "Anti-slip Sole", "Lightweight"],
     deliveryDate: "Delivery by Wed, 19 Feb",
     inStock: true,
@@ -79,7 +79,7 @@ export const products = [
     reviews: 329,
     category: "Home",
     image:
-      "https://images.unsplash.com/photo-1581579185169-1c76c316d36a?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1664714628878-9d2aa898b9e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhaW5sZXNzJTIwc3RlZWwlMjB3YXRlciUyMGJvdHRsZXxlbnwwfDB8MHx8fDA%3D",
     features: ["Insulated", "Rust-proof", "Leak-proof"],
     deliveryDate: "Delivery by Thu, 20 Feb",
     inStock: true,
@@ -94,7 +94,7 @@ export const products = [
     reviews: 5123,
     category: "Electronics",
     image:
-      "https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1694032007593-8ead82259b11?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aGQlMjBzbWFydCUyMHR2fGVufDB8MHwwfHx8MA%3D%3D",
     features: ["4K Display", "Dolby Audio", "Built-in Apps"],
     deliveryDate: "Delivery by Sat, 22 Feb",
     inStock: true,
@@ -109,7 +109,7 @@ export const products = [
     reviews: 742,
     category: "Bags",
     image:
-      "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1667411424771-cadd97150827?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwYmFja3BhY2t8ZW58MHwwfDB8fHww",
     features: ["Waterproof", "Laptop Sleeve", "Multiple Pockets"],
     deliveryDate: "Delivery by Tue, 18 Feb",
     inStock: true,
@@ -124,7 +124,7 @@ export const products = [
     reviews: 1570,
     category: "Gaming",
     image:
-      "https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1616296425622-4560a2ad83de?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmdiJTIwZ2FtaW5nJTIwbW91c2V8ZW58MHwwfDB8fHww",
     features: ["7 Buttons", "RGB Lights", "Adjustable DPI"],
     deliveryDate: "Delivery by Thu, 20 Feb",
     inStock: true,
