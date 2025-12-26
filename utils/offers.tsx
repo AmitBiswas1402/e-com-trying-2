@@ -10,7 +10,7 @@ export const banners: BannerItem[] = [
     cta: "Shop Now",
     ctaLink: "/electronics",
     image:
-      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200",
+      "https://images.unsplash.com/photo-1562696232-c59a1aee6b0f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     gradient: "from-slate-900 via-neutral-900 to-black",
   },
   {
@@ -21,7 +21,7 @@ export const banners: BannerItem[] = [
     cta: "Explore Collection",
     ctaLink: "/fashion",
     image:
-      "https://images.unsplash.com/photo-1520975911239-3e9f57a4b6f6?q=80&w=1200",
+      "https://images.unsplash.com/photo-1597374399280-541892788610?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UmVmcmVzaCUyMHlvdXIlMjB3YXJkcm9iZSUyMCVFMiU4MCU5NCUyMGV4Y2x1c2l2ZSUyMHN0eWxlcyUyQyUyMGZyZXNoJTIwYXJyaXZhbHMufGVufDB8MHwwfHx8MA%3D%3D",
     gradient: "from-pink-900 via-rose-900 to-purple-900",
   },
   {
@@ -33,7 +33,7 @@ export const banners: BannerItem[] = [
     cta: "View Bundles",
     ctaLink: "/home-decor",
     image:
-      "https://images.unsplash.com/photo-1505691723518-36a1b8f0a6b4?q=80&w=1200",
+      "https://images.unsplash.com/photo-1591434131699-16de49d6fa3b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QnV5JTIwMiUyMGl0ZW1zJTJDJTIwZ2V0JTIwMjUlMjUlMjBvZmYlMjBvbiUyMHRoaXJkLiUyMEN1cmF0ZWQlMjBkZWNvciUyMHRvJTIwcmVmcmVzaCUyMGFueSUyMHJvb20ufGVufDB8MHwwfHx8MA%3D%3D",
     gradient: "from-emerald-900 to-emerald-700",
   },
   {
@@ -44,7 +44,7 @@ export const banners: BannerItem[] = [
     cta: "Start Shopping",
     ctaLink: "/groceries",
     image:
-      "https://images.unsplash.com/photo-1542834369-f10ebf06d3cb?q=80&w=1200",
+      "https://images.unsplash.com/photo-1691070521756-caf788f4a66f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RnJlc2glMjBwcm9kdWNlJTJDJTIwcGFudHJ5JTIwc3RhcGxlcyUyMCUyNiUyMG1vcmUufGVufDB8MHwwfHx8MA%3D%3D",
     gradient: "from-orange-800 via-red-800 to-rose-900",
   },
   {

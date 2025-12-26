@@ -139,7 +139,7 @@ export const products = [
     reviews: 403,
     category: "Kitchen",
     image:
-      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1682590564685-bf150a5f9f98?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2VyYW1pYyUyMGNvZmZlJTIwbXVnJTIwc2V0fGVufDB8MHwwfHx8MA%3D%3D",
     features: ["Microwave Safe", "Premium Finish"],
     deliveryDate: "Delivery by Fri, 21 Feb",
     inStock: true,
@@ -154,7 +154,7 @@ export const products = [
     reviews: 998,
     category: "Tech",
     image:
-      "https://images.unsplash.com/photo-1580910051074-7ca36b1c23c9?q=80&w=550&h=450&fit=crop",
+      "https://images.pexels.com/photos/4072683/pexels-photo-4072683.jpeg",
     features: ["Fast Charging", "Compact", "Dual USB Output"],
     deliveryDate: "Delivery by Mon, 17 Feb",
     inStock: true,
@@ -169,7 +169,7 @@ export const products = [
     reviews: 220,
     category: "Furniture",
     image:
-      "https://images.unsplash.com/photo-1580428180134-4b94cdb5bbde?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1683836809851-9e3aad661ffd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YWRqdXN0aWJsZSUyMG9mZmljZSUyMGNoYWlyfGVufDB8MHwwfHx8MA%3D%3D",
     features: ["Ergonomic Support", "Height Adjustable", "Soft Cushion"],
     deliveryDate: "Delivery by Sun, 23 Feb",
     inStock: true,
@@ -184,7 +184,7 @@ export const products = [
     reviews: 189,
     category: "Wellness",
     image:
-      "https://images.unsplash.com/photo-1514066558159-fc8c737ef259?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1760804876364-33c5063a7540?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bHV4dXJ5JTIwc2NlbnRlZCUyMGNhbmRsZXxlbnwwfDB8MHx8fDA%3D",
     features: ["Long-lasting", "Premium Fragrance"],
     deliveryDate: "Delivery by Wed, 19 Feb",
     inStock: true,
@@ -199,7 +199,7 @@ export const products = [
     reviews: 3150,
     category: "Audio",
     image:
-      "https://images.unsplash.com/photo-1602524815530-74d2f7dbb389?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydGFibGUlMjBibHVldG9vdGglMjBzcGVha2VyfGVufDB8MHwwfHx8MA%3D%3D",
     features: ["Waterproof IPX6", "Heavy Bass", "10 hr Playback"],
     deliveryDate: "Delivery by Thu, 20 Feb",
     inStock: true,
@@ -214,7 +214,7 @@ export const products = [
     reviews: 321,
     category: "Kitchen",
     image:
-      "https://images.unsplash.com/photo-1629470924974-f95e2b58d404?q=80&w=550&h=450&fit=crop",
+      "https://images.pexels.com/photos/3768169/pexels-photo-3768169.jpeg",
     features: ["2 Burners", "Anti-Skid", "Toughened Glass"],
     deliveryDate: "Delivery by Sat, 22 Feb",
     inStock: true,
@@ -229,7 +229,7 @@ export const products = [
     reviews: 540,
     category: "Fashion",
     image:
-      "https://images.unsplash.com/photo-1598033122338-e12c5eaeddc9?q=80&w=550&h=450&fit=crop",
+      "https://images.pexels.com/photos/7869578/pexels-photo-7869578.jpeg",
     features: ["Stretchable", "Quick-dry", "Comfort Fit"],
     deliveryDate: "Delivery by Tue, 18 Feb",
     inStock: true,
@@ -244,7 +244,7 @@ export const products = [
     reviews: 670,
     category: "Health",
     image:
-      "https://images.unsplash.com/photo-1609840114035-1cec4484b71c?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1575325345210-a65324e66537?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWxldHJpYyUyMHRvb3RoYnJ1c2h8ZW58MHwwfDB8fHww",
     features: ["Soft Bristles", "2-Min Timer", "USB Charging"],
     deliveryDate: "Delivery by Fri, 21 Feb",
     inStock: true,
@@ -259,7 +259,7 @@ export const products = [
     reviews: 2091,
     category: "Fashion",
     image:
-      "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1637759292654-a12cb2be085e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8V29tZW4ncyUyMEhhbmRiYWclMjBMZWF0aGVyfGVufDB8MHwwfHx8MA%3D%3D",
     features: ["Premium Leather", "Magnetic Lock", "Spacious"],
     deliveryDate: "Delivery by Thu, 20 Feb",
     inStock: true,
@@ -274,7 +274,7 @@ export const products = [
     reviews: 802,
     category: "Kitchen",
     image:
-      "https://images.unsplash.com/photo-1606851091941-0450e8f68df2?q=80&w=550&h=450&fit=crop",
+      "https://images.pexels.com/photos/7534297/pexels-photo-7534297.jpeg",
     features: ["Touch Panel", "Timer", "Auto-off Safety"],
     deliveryDate: "Delivery by Wed, 19 Feb",
     inStock: true,
@@ -289,7 +289,7 @@ export const products = [
     reviews: 1243,
     category: "Electronics",
     image:
-      "https://images.unsplash.com/photo-1504215680853-026ed2a45def?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1495707902641-75cac588d2e9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGRzbHIlMjBjYW1lcmF8ZW58MHwwfDB8fHww",
     features: ["24MP CMOS", "Wi-Fi Enabled", "1080p Video"],
     deliveryDate: "Delivery by Sat, 22 Feb",
     inStock: true,
@@ -304,7 +304,7 @@ export const products = [
     reviews: 310,
     category: "Home",
     image:
-      "https://images.unsplash.com/photo-1615874959474-d609969a20b1?q=80&w=550&h=450&fit=crop",
+      "https://images.unsplash.com/photo-1600414428640-f78a67c2aa3b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE1lbW9yeSUyMEZvYW0lMjBQaWxsb3d8ZW58MHwwfDB8fHww",
     features: ["Soft Foam", "Washable Cover", "Neck Support"],
     deliveryDate: "Delivery by Tue, 18 Feb",
     inStock: true,

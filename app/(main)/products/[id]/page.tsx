@@ -25,15 +25,17 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
       {/* MAIN WRAPPER */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* IMAGE SECTION */}
-        <div className="bg-gray-100 p-6 rounded-2xl shadow-md flex items-center justify-center">
-          <Image
-            src={product.image}
-            alt={product.name}
-            width={500}
-            height={400}
-            className="rounded-xl w-full h-[330px] object-cover transition-transform duration-300 hover:scale-105"
-          />
-        </div>
+        <div className="bg-gray-100 rounded-2xl shadow-md flex items-center justify-center h-[380px]">
+  <Image
+    src={product.image}
+    alt={product.name}
+    width={800}
+    height={600}
+    className="max-h-full max-w-full object-contain"
+    priority
+  />
+</div>
+
 
         {/* PRODUCT INFO */}
         <div className="flex flex-col gap-5">

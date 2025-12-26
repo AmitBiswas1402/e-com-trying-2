@@ -79,7 +79,7 @@ const ProductsPage = () => {
             onClick={() => useCartStore.getState().addToCart(product)}
             className="
               mt-4 py-2.5 rounded-lg
-              bg-black text-white text-sm font-medium
+              bg-blue-500 text-white text-sm font-medium
               transition-all duration-300 ease-out
               hover:bg-blue-600 hover:scale-[1.03]
               active:scale-[0.98]
