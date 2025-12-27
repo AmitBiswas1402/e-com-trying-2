@@ -3,9 +3,16 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import Image from "next/image";
 
 export default function AdminProductPage() {
   const router = useRouter();
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setForm((prev) => ({ ...prev, image: e.target.files![0] }));
+    }
+  };
 
   const [form, setForm] = useState({
     name: "",
@@ -15,14 +22,28 @@ export default function AdminProductPage() {
     rating: "",
     reviews: "",
     category: "",
-    image: "",
+    image: null as File | null,
     features: "",
     deliveryDate: "",
     inStock: "true",
   });
 
+  const inputClass = `
+  w-full
+  rounded-lg
+  bg-zinc-800
+  border border-zinc-700
+  px-4 py-2.5
+  text-sm text-white
+  placeholder-zinc-400
+  outline-none
+  focus:border-blue-500
+  focus:ring-2 focus:ring-blue-500/20
+  transition
+`;
+
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -68,220 +89,163 @@ export default function AdminProductPage() {
         <form
           onSubmit={handleSubmit}
           className="
-    w-full max-w-md
+    w-full max-w-6xl
     rounded-2xl
     bg-zinc-900/80
     backdrop-blur-xl
     border border-white/10
     p-8
-    space-y-4
     shadow-[0_30px_80px_rgba(0,0,0,0.6)]
   "
         >
-          <h1 className="text-2xl font-bold text-white">Add New Product</h1>
+          <h1 className="text-2xl font-bold text-white mb-6">
+            Add New Product
+          </h1>
 
-          <input
-            className="
-  w-full
-  rounded-lg
-  bg-zinc-800
-  border border-zinc-700
-  px-4 py-2.5
-  text-sm text-white
-  placeholder-zinc-400
-  outline-none
-  focus:border-blue-500
-  focus:ring-2 focus:ring-blue-500/20
-  transition
-"
-            name="name"
-            placeholder="Product Name"
-            onChange={handleChange}
-            required
-          />
-          <input
-            className="
-  w-full
-  rounded-lg
-  bg-zinc-800
-  border border-zinc-700
-  px-4 py-2.5
-  text-sm text-white
-  placeholder-zinc-400
-  outline-none
-  focus:border-blue-500
-  focus:ring-2 focus:ring-blue-500/20
-  transition
-"
-            name="seller"
-            placeholder="Seller Name"
-            onChange={handleChange}
-            required
-          />
+          {/* GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Column 1 */}
+            <input
+              className={inputClass}
+              name="name"
+              placeholder="Product Name"
+              onChange={handleChange}
+              required
+            />
+            <input
+              className={inputClass}
+              name="seller"
+              placeholder="Seller Name"
+              onChange={handleChange}
+              required
+            />
+            <input
+              className={inputClass}
+              name="category"
+              placeholder="Category"
+              onChange={handleChange}
+            />
 
-          <input
-            className="
-  w-full
-  rounded-lg
-  bg-zinc-800
-  border border-zinc-700
-  px-4 py-2.5
-  text-sm text-white
-  placeholder-zinc-400
-  outline-none
-  focus:border-blue-500
-  focus:ring-2 focus:ring-blue-500/20
-  transition
-"
-            name="price"
-            type="number"
-            placeholder="Price"
-            onChange={handleChange}
-            required
-          />
-          <input
-            className="
-  w-full
-  rounded-lg
-  bg-zinc-800
-  border border-zinc-700
-  px-4 py-2.5
-  text-sm text-white
-  placeholder-zinc-400
-  outline-none
-  focus:border-blue-500
-  focus:ring-2 focus:ring-blue-500/20
-  transition
-"
-            name="oldPrice"
-            type="number"
-            placeholder="Old Price"
-            onChange={handleChange}
-          />
+            {/* Column 2 */}
+            <input
+              className={inputClass}
+              name="price"
+              type="number"
+              placeholder="Price"
+              onChange={handleChange}
+              required
+            />
+            <input
+              className={inputClass}
+              name="oldPrice"
+              type="number"
+              placeholder="Old Price"
+              onChange={handleChange}
+            />
+            <input
+              className={inputClass}
+              name="rating"
+              type="number"
+              step="0.1"
+              placeholder="Rating"
+              onChange={handleChange}
+            />
 
-          <input
-            className="
-  w-full
-  rounded-lg
-  bg-zinc-800
-  border border-zinc-700
-  px-4 py-2.5
-  text-sm text-white
-  placeholder-zinc-400
-  outline-none
-  focus:border-blue-500
-  focus:ring-2 focus:ring-blue-500/20
-  transition
-"
-            name="rating"
-            type="number"
-            step="0.1"
-            placeholder="Rating"
-            onChange={handleChange}
-          />
-          <input
-            className="
-  w-full
-  rounded-lg
-  bg-zinc-800
-  border border-zinc-700
-  px-4 py-2.5
-  text-sm text-white
-  placeholder-zinc-400
-  outline-none
-  focus:border-blue-500
-  focus:ring-2 focus:ring-blue-500/20
-  transition
-"
-            name="reviews"
-            type="number"
-            placeholder="Reviews Count"
-            onChange={handleChange}
-          />
+            {/* Column 3 */}
+            <input
+              className={inputClass}
+              name="reviews"
+              type="number"
+              placeholder="Reviews Count"
+              onChange={handleChange}
+            />
+            <input
+              className={inputClass}
+              name="deliveryDate"
+              placeholder="Delivery Date"
+              onChange={handleChange}
+            />
+            <select
+              className={inputClass}
+              name="inStock"
+              onChange={handleChange}
+            >
+              <option value="true">In Stock</option>
+              <option value="false">Out of Stock</option>
+            </select>
 
-          <input
-            className="
-  w-full
-  rounded-lg
-  bg-zinc-800
-  border border-zinc-700
-  px-4 py-2.5
-  text-sm text-white
-  placeholder-zinc-400
-  outline-none
-  focus:border-blue-500
-  focus:ring-2 focus:ring-blue-500/20
-  transition
-"
-            name="category"
-            placeholder="Category"
-            onChange={handleChange}
-          />
+            {/* FEATURES (FULL WIDTH) */}
+            <textarea
+              className={`
+    ${inputClass}
+    col-span-1 md:col-span-2 lg:col-span-3
+    resize-none
+    min-h-[100px]
+  `}
+              name="features"
+              placeholder="Features (comma separated)"
+              onChange={handleChange}
+            />
 
-          {/* IMAGE DROPDOWN */}
-          <select name="image" onChange={handleChange} required>
-            <option value="">Select Product Image</option>
-            <option value="https://images.unsplash.com/photo-1580894741074-1afc82dbd5a5">
-              Headphones
-            </option>
-            <option value="https://images.unsplash.com/photo-1580906855280-3dc1e59c07c7">
-              Fitness Band
-            </option>
-            <option value="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
-              T-Shirt
-            </option>
-          </select>
+            {/* IMAGE UPLOAD (FULL WIDTH) */}
+            <div className="col-span-1 md:col-span-2 lg:col-span-3 space-y-2">
+              <label className="text-sm text-zinc-300 font-medium">
+                Product Image
+              </label>
 
-          <input
-            className="
-  w-full
-  rounded-lg
-  bg-zinc-800
-  border border-zinc-700
-  px-4 py-2.5
-  text-sm text-white
-  placeholder-zinc-400
-  outline-none
-  focus:border-blue-500
-  focus:ring-2 focus:ring-blue-500/20
-  transition
-"
-            name="features"
-            placeholder="Features (comma separated)"
-            onChange={handleChange}
-          />
+              <div className="relative">
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleFileChange}
+                  className="absolute inset-0 opacity-0 cursor-pointer z-10"
+                  required
+                />
 
-          <input
-            className="
-  w-full
-  rounded-lg
-  bg-zinc-800
-  border border-zinc-700
-  px-4 py-2.5
-  text-sm text-white
-  placeholder-zinc-400
-  outline-none
-  focus:border-blue-500
-  focus:ring-2 focus:ring-blue-500/20
-  transition
-"
-            name="deliveryDate"
-            placeholder="Delivery Date"
-            onChange={handleChange}
-          />
+                <div
+                  className="
+          w-full h-[140px]
+          rounded-lg
+          border-2 border-dashed border-zinc-700
+          bg-zinc-800
+          flex flex-col items-center justify-center
+          text-zinc-400 text-sm
+          hover:border-blue-500
+          transition
+        "
+                >
+                  <span className="font-medium">
+                    {form.image ? "Image selected" : "Click to upload image"}
+                  </span>
+                  <span className="text-xs mt-1">PNG, JPG up to 5MB</span>
+                </div>
+              </div>
 
-          {/* IN STOCK */}
-          <select name="inStock" onChange={handleChange}>
-            <option value="true">In Stock</option>
-            <option value="false">Out of Stock</option>
-          </select>
+              {form.image && (
+                <Image
+                  src={URL.createObjectURL(form.image)}
+                  alt="Preview"
+                  className="mt-3 h-32 w-full object-contain rounded-md bg-zinc-900"
+                />
+              )}
+            </div>
 
-          <button
-            type="submit"
-            className="w-full bg-white text-black py-2 rounded-md font-semibold hover:bg-blue-600 hover:text-white transition"
-          >
-            Add Product
-          </button>
+            {/* SUBMIT BUTTON (FULL WIDTH) */}
+            <button
+              type="submit"
+              className="
+        col-span-1 md:col-span-2 lg:col-span-3
+        w-full
+        bg-white text-black
+        py-2.5 rounded-md
+        font-semibold
+        hover:bg-blue-600 hover:text-white
+        transition cursor-pointer
+      "
+            >
+              Add Product
+            </button>
+          </div>
         </form>
       </div>
     </div>
