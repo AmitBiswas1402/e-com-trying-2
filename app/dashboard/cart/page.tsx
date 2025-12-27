@@ -29,21 +29,23 @@ export default function AdminProductPage() {
   });
 
   const inputClass = `
-  w-full
-  rounded-lg
-  bg-zinc-800
-  border border-zinc-700
-  px-4 py-2.5
-  text-sm text-white
-  placeholder-zinc-400
-  outline-none
-  focus:border-blue-500
-  focus:ring-2 focus:ring-blue-500/20
-  transition
-`;
+    w-full
+    rounded-lg
+    bg-zinc-800
+    border border-zinc-700
+    px-4 py-2.5
+    text-sm text-white
+    placeholder-zinc-400
+    outline-none
+    focus:border-blue-500
+    focus:ring-2 focus:ring-blue-500/20
+    transition
+  `;
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -89,14 +91,14 @@ export default function AdminProductPage() {
         <form
           onSubmit={handleSubmit}
           className="
-    w-full max-w-6xl
-    rounded-2xl
-    bg-zinc-900/80
-    backdrop-blur-xl
-    border border-white/10
-    p-8
-    shadow-[0_30px_80px_rgba(0,0,0,0.6)]
-  "
+            w-full max-w-6xl
+            rounded-2xl
+            bg-zinc-900/80
+            backdrop-blur-xl
+            border border-white/10
+            p-8
+            shadow-[0_30px_80px_rgba(0,0,0,0.6)]
+          "
         >
           <h1 className="text-2xl font-bold text-white mb-6">
             Add New Product
@@ -177,11 +179,11 @@ export default function AdminProductPage() {
             {/* FEATURES (FULL WIDTH) */}
             <textarea
               className={`
-    ${inputClass}
-    col-span-1 md:col-span-2 lg:col-span-3
-    resize-none
-    min-h-[100px]
-  `}
+                ${inputClass}
+                col-span-1 md:col-span-2 lg:col-span-3
+                resize-none
+                min-h-[100px]
+              `}
               name="features"
               placeholder="Features (comma separated)"
               onChange={handleChange}
@@ -204,15 +206,15 @@ export default function AdminProductPage() {
 
                 <div
                   className="
-          w-full h-[140px]
-          rounded-lg
-          border-2 border-dashed border-zinc-700
-          bg-zinc-800
-          flex flex-col items-center justify-center
-          text-zinc-400 text-sm
-          hover:border-blue-500
-          transition
-        "
+                    w-full h-[140px]
+                    rounded-lg
+                    border-2 border-dashed border-zinc-700
+                    bg-zinc-800
+                    flex flex-col items-center justify-center
+                    text-zinc-400 text-sm
+                    hover:border-blue-500
+                    transition
+                  "
                 >
                   <span className="font-medium">
                     {form.image ? "Image selected" : "Click to upload image"}
@@ -234,14 +236,14 @@ export default function AdminProductPage() {
             <button
               type="submit"
               className="
-        col-span-1 md:col-span-2 lg:col-span-3
-        w-full
-        bg-white text-black
-        py-2.5 rounded-md
-        font-semibold
-        hover:bg-blue-600 hover:text-white
-        transition cursor-pointer
-      "
+                col-span-1 md:col-span-2 lg:col-span-3
+                w-full
+                bg-white text-black
+                py-2.5 rounded-md
+                font-semibold
+                hover:bg-blue-600 hover:text-white
+                transition cursor-pointer
+              "
             >
               Add Product
             </button>
