@@ -1,6 +1,8 @@
-import { products } from "@/utils/products";
 import Image from "next/image";
 import AddToCartButton from "@/components/AddToCartButton";
+import { connectDB } from "@/lib/mongoose";
+import Product from "@/models/Product";
+import type { Product as ProductType } from "@/types";
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
@@ -8,11 +10,17 @@ interface ProductPageProps {
 
 export default async function ProductDetailsPage({ params }: ProductPageProps) {
   const { id } = await params;
-  const productId = Number(id);
 
-  const product = products.find((p) => p.id === productId);
+  let productDoc = null;
 
-  if (!product) {
+  try {
+    await connectDB();
+    productDoc = await Product.findById(id);
+  } catch (error) {
+    console.error("Error fetching product:", error);
+  }
+
+  if (!productDoc) {
     return (
       <div className="p-10 text-center text-red-600 text-xl font-semibold">
         Product Not Found
@@ -20,22 +28,37 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
     );
   }
 
+  const parsedId = parseInt(productDoc._id.toString().slice(-8), 16);
+  const product: ProductType = {
+    id: isNaN(parsedId) ? 0 : parsedId,
+    name: productDoc.name,
+    seller: productDoc.seller,
+    price: productDoc.price,
+    oldPrice: productDoc.oldPrice || 0,
+    rating: productDoc.rating,
+    reviews: productDoc.reviews,
+    category: productDoc.category || "",
+    image: productDoc.image,
+    features: productDoc.features || [],
+    deliveryDate: productDoc.deliveryDate,
+    inStock: productDoc.inStock,
+  };
+
   return (
     <div className="p-8 md:p-12 max-w-6xl mx-auto">
       {/* MAIN WRAPPER */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* IMAGE SECTION */}
         <div className="bg-gray-100 rounded-2xl shadow-md flex items-center justify-center h-[380px]">
-  <Image
-    src={product.image}
-    alt={product.name}
-    width={800}
-    height={600}
-    className="max-h-full max-w-full object-contain"
-    priority
-  />
-</div>
-
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={800}
+            height={600}
+            className="max-h-full max-w-full object-contain"
+            priority
+          />
+        </div>
 
         {/* PRODUCT INFO */}
         <div className="flex flex-col gap-5">
@@ -76,7 +99,7 @@ export default async function ProductDetailsPage({ params }: ProductPageProps) {
           <div className="mt-3">
             <h3 className="text-lg font-semibold mb-2">Features</h3>
             <ul className="space-y-1 text-white text-sm list-disc list-inside">
-              {product.features.map((feature, i) => (
+              {product.features.map((feature: string, i: number) => (
                 <li key={i}>{feature}</li>
               ))}
             </ul>

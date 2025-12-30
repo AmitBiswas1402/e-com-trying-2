@@ -72,13 +72,19 @@ const ProductsPage = () => {
         >
           {/* IMAGE */}
           <div className="w-full h-56 bg-white rounded-xl overflow-hidden">
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={300}
-              height={240}
-              className="object-cover w-full h-full hover:scale-105 transition"
-            />
+            {product.image ? (
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={300}
+                height={240}
+                className="object-cover w-full h-full hover:scale-105 transition"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-gray-400">
+                No Image
+              </div>
+            )}
           </div>
 
           {/* INFO */}

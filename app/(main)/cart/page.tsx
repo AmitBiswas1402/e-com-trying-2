@@ -24,13 +24,19 @@ export default function CartPage() {
           key={item.id}
           className="flex items-center gap-6 bg-gray-100 p-4 rounded-xl shadow-sm"
         >
-          <Image
-            src={item.image}
-            alt={item.name}
-            width={80}
-            height={70}
-            className="rounded-md object-cover"
-          />
+          {item.image ? (
+            <Image
+              src={item.image}
+              alt={item.name}
+              width={80}
+              height={70}
+              className="rounded-md object-cover"
+            />
+          ) : (
+            <div className="w-20 h-[70px] bg-gray-300 rounded-md flex items-center justify-center text-gray-500 text-xs">
+              No Image
+            </div>
+          )}
 
           <div className="flex-1">
             <h2 className="font-semibold text-lg">{item.name}</h2>
