@@ -22,32 +22,23 @@ export function ProductCard({ product }: ProductCardProps) {
   const isOutOfStock = stock <= 0;
 
   return (
-    <div
-      className="group flex flex-col
-        w-60
-        overflow-hidden rounded-lg
-        bg-white shadow-sm
-        ring-1 ring-zinc-200
-        transition-all duration-200
-        hover:shadow-md
-        dark:bg-zinc-900 dark:ring-zinc-800
-      "
-    >
+    <div className="group flex w-60 flex-col overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-zinc-200 dark:bg-zinc-900 dark:ring-zinc-800">
       {/* Image Container */}
       <Link
         href={`/products/${product.slug}`}
-        className="relative block aspect-square overflow-hidden bg-zinc-100 dark:bg-zinc-800"
+        className="relative isolate block aspect-square overflow-hidden bg-zinc-100 dark:bg-zinc-800"
       >
+        {/* IMAGE LAYER */}
         {mainImageUrl ? (
           <Image
             src={mainImageUrl}
             alt={product.name ?? "Product image"}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="z-0 object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full items-center justify-center">
+          <div className="z-0 flex h-full items-center justify-center">
             <svg
               className="h-12 w-12 text-zinc-300 dark:text-zinc-600"
               fill="none"
@@ -64,21 +55,18 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
 
-        {/* Category Badge */}
+        {/* CATEGORY BADGE */}
         {product.category && (
-          <Badge
-            variant="secondary"
-            className="absolute left-2 top-2 bg-white/90 text-xs font-medium text-zinc-700 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-300"
-          >
+          <Badge className="pointer-events-none absolute left-2 top-2 z-20 bg-white/90 text-xs text-zinc-700 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-300">
             {product.category.title}
           </Badge>
         )}
 
-        {/* Out of Stock Badge */}
+        {/* ✅ OUT OF STOCK BADGE — NOW 100% VISIBLE */}
         {isOutOfStock && (
           <Badge
             variant="destructive"
-            className="absolute right-2 top-2 text-xs"
+            className="pointer-events-none absolute right-2 top-2 z-20 text-xs"
           >
             Out of Stock
           </Badge>
@@ -87,20 +75,17 @@ export function ProductCard({ product }: ProductCardProps) {
 
       {/* Product Info */}
       <div className="flex flex-col gap-3 p-4">
-        <Link href={`/products/${product.slug}`} className="block">
-          <h3 className="line-clamp-1 text-sm font-medium text-zinc-900 dark:text-zinc-100">
-            {product.name}
-          </h3>
-        </Link>
+        <h3 className="line-clamp-1 text-sm font-medium text-zinc-900 dark:text-zinc-100">
+          {product.name}
+        </h3>
 
         <p className="text-base font-semibold text-zinc-900 dark:text-white">
           {formatPrice(product.price)}
         </p>
 
-        {/* Add to Basket Button - Always Visible */}
         <Button size="sm" className="w-full gap-2" disabled={isOutOfStock}>
           <ShoppingBag className="h-4 w-4" />
-          Add to Basket
+          {isOutOfStock ? "Out of Stock" : "Add to Basket"}
         </Button>
       </div>
     </div>
