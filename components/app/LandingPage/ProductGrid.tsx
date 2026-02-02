@@ -22,10 +22,12 @@ export function ProductGrid({ products }: ProductGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
-      {products.map((product) => (
-        <ProductCard key={product._id} product={product} />
-      ))}
+    <div className="@container w-full">
+      <div className="grid grid-cols-1 gap-5 @xs:grid-cols-2 @sm:grid-cols-2 @md:grid-cols-3 @lg:grid-cols-3">
+        {products.map((product) => (
+          <ProductCard key={product._id} product={product} />
+        ))}
+      </div>
     </div>
   );
 }
