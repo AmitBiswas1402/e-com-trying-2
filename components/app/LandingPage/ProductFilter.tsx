@@ -24,6 +24,12 @@ interface ProductFiltersProps {
 export function ProductFilters({ categories }: ProductFiltersProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [mounted, setMounted] = useState(false);
+
+  // Prevent hydration mismatch with Radix UI Select components
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const currentSearch = searchParams.get("q") ?? "";
   const currentCategory = searchParams.get("category") ?? "";
@@ -144,6 +150,18 @@ export function ProductFilters({ categories }: ProductFiltersProps) {
       )}
     </div>
   );
+
+  // Show skeleton while mounting to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <div className="space-y-6 rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
+        <div className="h-10 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800" />
+        <div className="h-10 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800" />
+        <div className="h-10 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800" />
+        <div className="h-10 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6 rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
