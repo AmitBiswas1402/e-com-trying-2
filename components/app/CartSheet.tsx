@@ -15,7 +15,7 @@ import {
 } from "@/lib/store/cart-store-provider";
 import { CartItem } from "./CartItem";
 import { CartSummary } from "./CartSummary";
-import { useCartStock } from "@/hooks/useCartHooks";
+import { useCartStock } from "@/hooks/useCartStocks";
 
 export function CartSheet() {
   const items = useCartItems();

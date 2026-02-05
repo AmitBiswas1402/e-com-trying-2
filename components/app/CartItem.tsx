@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button";
 import { useCartActions } from "@/lib/store/cart-store-provider";
 import { cn, formatPrice } from "@/lib/utils";
 import type { CartItem as CartItemType } from "@/lib/store/cart-store";
-
-import { StockInfo } from "@/hooks/useCartHooks";
+import { StockInfo } from "@/hooks/useCartStocks";
 import { StockBadge } from "./LandingPage/StockBadge";
 import { AddToCartButton } from "./LandingPage/AddToCardButton";
+
 interface CartItemProps {
   item: CartItemType;
   stockInfo?: StockInfo;
