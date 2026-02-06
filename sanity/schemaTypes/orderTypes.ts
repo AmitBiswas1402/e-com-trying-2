@@ -123,6 +123,20 @@ export const orderType = defineType({
       description: "Stripe payment intent ID",
     }),
     defineField({
+      name: "razorpayPaymentId",
+      type: "string",
+      group: "payment",
+      readOnly: true,
+      description: "Razorpay payment ID",
+    }),
+    defineField({
+      name: "razorpayOrderId",
+      type: "string",
+      group: "payment",
+      readOnly: true,
+      description: "Razorpay order ID",
+    }),
+    defineField({
       name: "createdAt",
       type: "datetime",
       group: "details",
