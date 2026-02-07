@@ -1,4 +1,3 @@
-
 export const COLORS = [
   { value: "black", label: "Black" },
   { value: "white", label: "White" },
